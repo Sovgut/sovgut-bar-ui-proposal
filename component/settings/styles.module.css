@@ -1,2 +1,72 @@
 .component {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: grid;
+	background: rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	grid-template-columns: auto max-content max-content auto;
+	grid-template-areas: '. tabs tab-content .';
+	z-index: 999;
+}
+
+.tabs {
+	grid-area: tabs;
+	background: rgba(0, 0, 0, 0.9);
+	height: 100%;
+	width: 400px;
+	display: grid;
+	padding: 1rem;
+	padding-top: 10rem;
+	padding-bottom: 10rem;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.tab-content {
+	grid-area: tab-content;
+	background: rgba(0, 0, 0, 0.5);
+	height: 100%;
+	width: 1200px;
+}
+
+.settings-category-list {
+	display: grid;
+	gap: 1rem;
+	grid-auto-rows: max-content;
+}
+
+.settings-category-list-item {
+	color: gray;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.5rem;
+	cursor: pointer;
+	user-select: none;
+}
+.settings-category-list-item:hover {
+	color: white;
+}
+
+.settings-game-controls {
+	display: grid;
+	align-self: end;
+	color: rgb(235, 187, 98);
+	text-transform: uppercase;
+	font-weight: bold;
+
+	font-size: 1.5rem;
+}
+
+.settings-game-controls-item {
+	color: rgb(235, 187, 98);
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.5rem;
+	cursor: pointer;
+	user-select: none;
+}
+.settings-game-controls-item:hover {
+	color: white;
 }
