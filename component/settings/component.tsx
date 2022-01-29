@@ -6,19 +6,19 @@ export default function Settings() {
 			<div className={styles.tabs}>
 				<div className={styles['settings-category-list']}>
 					<div className={styles['settings-category-list-item']}>
+						Game
+					</div>
+					<div className={styles['settings-category-list-item']}>
 						Graphics
+					</div>
+					<div className={styles['settings-category-list-item']}>
+						Audio
 					</div>
 					<div className={styles['settings-category-list-item']}>
 						interface
 					</div>
 					<div className={styles['settings-category-list-item']}>
-						Game
-					</div>
-					<div className={styles['settings-category-list-item']}>
 						Control
-					</div>
-					<div className={styles['settings-category-list-item']}>
-						Audio
 					</div>
 					<div className={styles['settings-category-list-item']}>
 						Notifications
