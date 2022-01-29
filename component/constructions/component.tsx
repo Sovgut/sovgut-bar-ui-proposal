@@ -239,7 +239,7 @@ export default function Constructions() {
 				categoryIndex = ICategoryIndex.Energy;
 				break;
 			case 'KeyB':
-				categoryIndex = ICategoryIndex.Metal;
+				categoryIndex = !event.ctrlKey ? ICategoryIndex.Metal : null;
 				break;
 		}
 

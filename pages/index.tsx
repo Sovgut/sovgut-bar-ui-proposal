@@ -10,6 +10,7 @@ import styles from '~styles/Home.module.css';
 export default function Home() {
 	const [isScrollable, setScrollable] = useState(false);
 	const [isVisibleSettings, setSettingsVisibility] = useState(false);
+	const [isVisibleBackground, setBackgroundVisibility] = useState(true);
 
 	useEffect(() => {
 		if (isScrollable) {
@@ -17,11 +18,19 @@ export default function Home() {
 		}
 
 		document.body.addEventListener('keypress', onOpenSettingsKeyPress);
+		document.body.addEventListener(
+			'keypress',
+			onToggleBackgroundImageKeyPress,
+		);
 
 		return () => {
 			document.body.removeEventListener(
 				'keypress',
 				onOpenSettingsKeyPress,
+			);
+			document.body.removeEventListener(
+				'keypress',
+				onToggleBackgroundImageKeyPress,
 			);
 		};
 	}, [isScrollable]);
@@ -32,12 +41,20 @@ export default function Home() {
 		}
 	}
 
+	function onToggleBackgroundImageKeyPress(event) {
+		if (event.code === 'KeyB' && event.ctrlKey) {
+			setBackgroundVisibility((prevState) => !prevState);
+		}
+	}
+
 	return (
 		<div className={styles.component}>
 			<div className={styles.container}>
-				<div className={styles['background-image']}>
-					<Image src={image} alt="bar" />
-				</div>
+				{isVisibleBackground && (
+					<div className={styles['background-image']}>
+						<Image src={image} alt="bar" />
+					</div>
+				)}
 
 				<Minimap />
 				<Constructions />
