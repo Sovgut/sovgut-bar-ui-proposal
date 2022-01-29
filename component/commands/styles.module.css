@@ -1,0 +1,6 @@
+.component {
+	grid-area: commands;
+	padding: 0.25rem;
+	border: 1px solid orange;
+	display: none;
+}

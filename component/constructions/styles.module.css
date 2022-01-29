@@ -1,0 +1,101 @@
+.component {
+	grid-area: constructions;
+
+	display: grid;
+	grid-template-rows: auto max-content max-content;
+	grid-template-areas: '.' 'construction-container' 'category-container';
+	gap: 0.25rem;
+}
+
+.category-container {
+	grid-area: category-container;
+	display: grid;
+	grid-auto-flow: column;
+	width: max-content;
+	padding: 0.25rem;
+	border-radius: 0.25rem;
+	backdrop-filter: blur(5px);
+	box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.5);
+	gap: 1px;
+}
+
+.category-button {
+	background: transparent;
+	color: transparent;
+	cursor: pointer;
+	text-align: center;
+	width: max-content;
+	border: none;
+}
+
+.category-button-inner {
+	background: rgba(214, 210, 196, 0.5);
+	color: black;
+	padding: 0.25rem 1rem;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.category-button-inner span {
+	margin-left: 0.25rem;
+	color: rgb(235, 187, 98);
+}
+
+.category-button:hover .category-button-inner:not(.active) {
+	background: rgba(214, 210, 196, 0.75);
+}
+
+.category-button-inner.active {
+	background: rgba(214, 210, 196, 1);
+}
+
+.category-button:active .category-button-inner {
+	background: rgba(214, 210, 196, 0.9);
+}
+
+.category-button:first-child .category-button-inner {
+	border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.category-button:last-child .category-button-inner {
+	border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.category-button-inner.active span {
+	color: rgb(133, 93, 19);
+}
+
+.construction-container {
+	grid-area: construction-container;
+	display: grid;
+	grid-auto-flow: column;
+	width: max-content;
+	padding: 0.25rem;
+	border-radius: 0.25rem;
+	backdrop-filter: blur(5px);
+	box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.5);
+	gap: 1px;
+}
+
+.construction-button {
+	width: max-content;
+	overflow: hidden;
+	display: grid;
+	cursor: pointer;
+	align-content: center;
+	opacity: 0.9;
+}
+
+.construction-button:hover {
+	opacity: 1;
+}
+
+.construction-button:first-child {
+	border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.construction-button:last-child {
+	border-radius: 0 0.25rem 0.25rem 0;
+}
