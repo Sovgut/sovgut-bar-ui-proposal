@@ -1,0 +1,48 @@
+.component {
+	grid-area: resources;
+	display: grid;
+}
+
+.container {
+	display: grid;
+	justify-self: center;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(5px);
+	border-radius: 0.25rem;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+	padding: 0.25rem;
+	height: 30px;
+	width: 100%;
+
+	grid-template-areas: 'metal time energy';
+	grid-template-columns: 4fr 1fr 4fr;
+}
+
+.metal {
+	grid-area: metal;
+	border-radius: 0.25rem;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	background: rgb(204, 204, 204);
+	font-weight: bold;
+}
+
+.energy {
+	grid-area: energy;
+	border-radius: 0.25rem;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	background: rgb(238, 238, 110);
+	font-weight: bold;
+}
+
+.time {
+	grid-area: time;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	color: white;
+	font-weight: bold;
+}

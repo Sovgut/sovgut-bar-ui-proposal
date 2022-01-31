@@ -1,0 +1,58 @@
+.component {
+	grid-area: alies;
+	display: grid;
+	width: max-content;
+}
+
+.container {
+	display: grid;
+	justify-self: start;
+	width: max-content;
+
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(5px);
+	border-radius: 0.25rem;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.player {
+	display: grid;
+	width: max-content;
+	grid-template-columns: max-content max-content;
+	grid-template-areas: 'player-color player-name';
+	align-items: center;
+	justify-items: center;
+	padding: 0.25rem;
+	color: white;
+	font-weight: bold;
+}
+
+.player-icon {
+	width: 14px;
+	height: 14px;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+}
+
+.player-icon.player-icon-destroyed {
+	opacity: 0.25;
+	filter: invert(100%);
+}
+
+.player-color {
+	width: 24px;
+	height: 24px;
+	border-radius: 0.25rem;
+	border: 1px solid black;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+}
+
+.player-name {
+	grid-area: player-name;
+	font-size: 0.7rem;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+}

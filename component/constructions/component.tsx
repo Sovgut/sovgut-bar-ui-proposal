@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AdvancedContext } from '~context/AdvancedContext';
 import styles from './styles.module.css';
 
 enum IConstructionType {
@@ -213,6 +214,7 @@ const categories: ICategory[] = [
 
 export default function Constructions() {
 	const [activeCategory, setActiveCategory] = useState<ICategory>(null);
+	const advancedContext = useContext(AdvancedContext);
 
 	useEffect(() => {
 		document.body.addEventListener('keypress', onKeyPress);
@@ -299,7 +301,9 @@ export default function Constructions() {
 						>
 							<div className={buttonActiveClasses}>
 								{category.name}
-								<span>[{category.hotkey}]</span>
+								{advancedContext.isAdvanced && (
+									<span>[{category.hotkey}]</span>
+								)}
 							</div>
 						</button>
 					);
