@@ -1,10 +1,12 @@
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AdvancedContext } from '~context/AdvancedContext';
 import background from '~public/minimap.png';
 import styles from './styles.module.css';
 
 export default function Minimap() {
 	const [isVisible, setVisibility] = useState(true);
+	const advancedContext = useContext(AdvancedContext);
 
 	useEffect(() => {
 		document.body.addEventListener('keypress', onMapKeyPress);
@@ -25,6 +27,12 @@ export default function Minimap() {
 			{isVisible && (
 				<div className={styles.map}>
 					<Image src={background} alt="bar minimap" />
+				</div>
+			)}
+			{advancedContext.isAdvanced && (
+				<div className={styles['toggle-map-button']}>
+					Toggle map
+					<span className={styles.hotkey}> [M]</span>
 				</div>
 			)}
 		</div>
